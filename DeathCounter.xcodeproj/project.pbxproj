@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAE1012224C9795A00102654 /* DeathCounterView.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1012124C9795A00102654 /* DeathCounterView.h */; };
+		EAE1012424C9795A00102654 /* DeathCounterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE1012324C9795A00102654 /* DeathCounterView.m */; };
+		EAE1014924C9814A00102654 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = EAE1014024C97F4F00102654 /* index.html */; };
+		EAE1014A24C9814A00102654 /* Iceland-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAE1014824C9807E00102654 /* Iceland-Regular.ttf */; };
+		EAE1014B24C9814A00102654 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = EAE1014124C97F4F00102654 /* script.js */; };
+		EAE1014C24C9814A00102654 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = EAE1014224C97F4F00102654 /* style.css */; };
+		EAE1014D24C9814A00102654 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = EAE1014624C9800A00102654 /* jquery.min.js */; };
+		EAE1015924C99EBD00102654 /* ConfigSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE1015824C99EBD00102654 /* ConfigSheet.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EAE1011E24C9795A00102654 /* DeathCounter.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeathCounter.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE1012124C9795A00102654 /* DeathCounterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeathCounterView.h; sourceTree = "<group>"; };
+		EAE1012324C9795A00102654 /* DeathCounterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeathCounterView.m; sourceTree = "<group>"; };
+		EAE1012524C9795A00102654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE1014024C97F4F00102654 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		EAE1014124C97F4F00102654 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		EAE1014224C97F4F00102654 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		EAE1014624C9800A00102654 /* jquery.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
+		EAE1014824C9807E00102654 /* Iceland-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Iceland-Regular.ttf"; sourceTree = "<group>"; };
+		EAE1015824C99EBD00102654 /* ConfigSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigSheet.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAE1011B24C9795A00102654 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAE1011424C9795A00102654 = {
+			isa = PBXGroup;
+			children = (
+				EAE1012024C9795A00102654 /* DeathCounter */,
+				EAE1011F24C9795A00102654 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAE1011F24C9795A00102654 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAE1011E24C9795A00102654 /* DeathCounter.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAE1012024C9795A00102654 /* DeathCounter */ = {
+			isa = PBXGroup;
+			children = (
+				EAE1015824C99EBD00102654 /* ConfigSheet.xib */,
+				EAE1013F24C97F4F00102654 /* WWW */,
+				EAE1012124C9795A00102654 /* DeathCounterView.h */,
+				EAE1012324C9795A00102654 /* DeathCounterView.m */,
+				EAE1012524C9795A00102654 /* Info.plist */,
+			);
+			path = DeathCounter;
+			sourceTree = "<group>";
+		};
+		EAE1013F24C97F4F00102654 /* WWW */ = {
+			isa = PBXGroup;
+			children = (
+				EAE1014024C97F4F00102654 /* index.html */,
+				EAE1014824C9807E00102654 /* Iceland-Regular.ttf */,
+				EAE1014124C97F4F00102654 /* script.js */,
+				EAE1014224C97F4F00102654 /* style.css */,
+				EAE1014624C9800A00102654 /* jquery.min.js */,
+			);
+			path = WWW;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EAE1011924C9795A00102654 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE1012224C9795A00102654 /* DeathCounterView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EAE1011D24C9795A00102654 /* DeathCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE1012824C9795A00102654 /* Build configuration list for PBXNativeTarget "DeathCounter" */;
+			buildPhases = (
+				EAE1011924C9795A00102654 /* Headers */,
+				EAE1011A24C9795A00102654 /* Sources */,
+				EAE1011B24C9795A00102654 /* Frameworks */,
+				EAE1011C24C9795A00102654 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeathCounter;
+			productName = DeathCounter;
+			productReference = EAE1011E24C9795A00102654 /* DeathCounter.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAE1011524C9795A00102654 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Mac Van Anh";
+				TargetAttributes = {
+					EAE1011D24C9795A00102654 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = EAE1011824C9795A00102654 /* Build configuration list for PBXProject "DeathCounter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAE1011424C9795A00102654;
+			productRefGroup = EAE1011F24C9795A00102654 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAE1011D24C9795A00102654 /* DeathCounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAE1011C24C9795A00102654 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE1014924C9814A00102654 /* index.html in Resources */,
+				EAE1014A24C9814A00102654 /* Iceland-Regular.ttf in Resources */,
+				EAE1014B24C9814A00102654 /* script.js in Resources */,
+				EAE1014C24C9814A00102654 /* style.css in Resources */,
+				EAE1015924C99EBD00102654 /* ConfigSheet.xib in Resources */,
+				EAE1014D24C9814A00102654 /* jquery.min.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAE1011A24C9795A00102654 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE1012424C9795A00102654 /* DeathCounterView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EAE1012624C9795A00102654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_PREVIEWS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EAE1012724C9795A00102654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EAE1012924C9795A00102654 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BE6G7FRYJZ;
+				INFOPLIST_FILE = DeathCounter/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anhmv.DeathCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		EAE1012A24C9795A00102654 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BE6G7FRYJZ;
+				INFOPLIST_FILE = DeathCounter/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.anhmv.DeathCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAE1011824C9795A00102654 /* Build configuration list for PBXProject "DeathCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE1012624C9795A00102654 /* Debug */,
+				EAE1012724C9795A00102654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAE1012824C9795A00102654 /* Build configuration list for PBXNativeTarget "DeathCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE1012924C9795A00102654 /* Debug */,
+				EAE1012A24C9795A00102654 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAE1011524C9795A00102654 /* Project object */;
+}
