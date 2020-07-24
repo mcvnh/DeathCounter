@@ -1,8 +1,8 @@
 # Death Counter
 
-A very simple clock counter screensaver that counts to your death.
+ A simple counter screensaver that counts down to your death. 
 
-![screenshot](preview.png)
+![screenshot](deathcounter.png)
 
 ## Installation
 
