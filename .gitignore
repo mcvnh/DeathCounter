@@ -27,3 +27,5 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+.DS_Store
