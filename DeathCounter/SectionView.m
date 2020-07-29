@@ -12,7 +12,7 @@
 
 - (id)initWithFrame:(NSRect)frameRect {
     self = [super initWithFrame:frameRect];
-    
+
     value = [LabelView new];
     label = [LabelView new];
     

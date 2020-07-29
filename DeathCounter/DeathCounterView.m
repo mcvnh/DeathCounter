@@ -24,7 +24,6 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
         hoursView = [SectionView new];
         minutesView = [SectionView new];
         secondsView = [SectionView new];
-
         
         [stackView addArrangedSubview:daysView];
         [stackView addArrangedSubview:hoursView];
@@ -37,12 +36,13 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
         [secondsView setTranslatesAutoresizingMaskIntoConstraints:NO];
         [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
+        [self addSubview:stackView];
+        
+        [stackView setSpacing:self.frame.size.width * 0.05];
+
         [self addConstraint:[stackView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor]];
         [self addConstraint:[stackView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor]];
-        [self addConstraint:[stackView.topAnchor constraintEqualToAnchor:self.topAnchor]];
 
-        [stackView layoutSubtreeIfNeeded];
-        
         // set sample test
         [daysView setValueText:@"7777"];
         [daysView setLabelText:@"Days"];
@@ -55,8 +55,6 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
 
         [secondsView setValueText:@"00"];
         [secondsView setLabelText:@"Seconds"];
-
-        [self addSubview:stackView];
     }
     
     return self;
