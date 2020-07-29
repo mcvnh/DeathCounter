@@ -7,10 +7,14 @@
 //
 
 #import <ScreenSaver/ScreenSaver.h>
+#import "SectionView.h"
 
 @interface DeathCounterView : ScreenSaverView {
-    IBOutlet id configSheet;
-    IBOutlet NSTextField *birthday;
-    IBOutlet NSTextField *expectedDeathAge;
+    SectionView *daysView;
+    SectionView *hoursView;
+    SectionView *minutesView;
+    SectionView *secondsView;
+    
+    NSStackView *stackView;
 }
 @end

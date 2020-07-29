@@ -17,32 +17,51 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
 {
     self = [super initWithFrame:frame isPreview:isPreview];
     
-    ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:deathCounterModule];
-    [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-           @"1991/10/27", @"birthday",
-           nil]];
-    [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-            @"50", @"expectedDeathAge",
-       nil]];
+    if (self) {
+        stackView = [NSStackView new];
 
-    // WebView
-    NSString *birthday = [defaults stringForKey:@"birthday"];
-    NSString *expectedDeathAge = [defaults stringForKey:@"expectedDeathAge"];
+        daysView = [SectionView new];
+        hoursView = [SectionView new];
+        minutesView = [SectionView new];
+        secondsView = [SectionView new];
 
-    NSURL* indexHTML = [NSURL URLWithString:[[[[NSURL fileURLWithPath:[[NSBundle bundleForClass:self.class].resourcePath stringByAppendingString:@"/index.html"] isDirectory:NO] description] stringByAppendingFormat:@"?birthday=%@", birthday] stringByAppendingFormat:@"&expectedDeathAge=%@", expectedDeathAge]];
+        
+        [stackView addArrangedSubview:daysView];
+        [stackView addArrangedSubview:hoursView];
+        [stackView addArrangedSubview:minutesView];
+        [stackView addArrangedSubview:secondsView];
 
-    WKWebView* webView = [[WKWebView alloc] initWithFrame:NSMakeRect(0, 0, frame.size.width, frame.size.height)];
-    [webView setValue: @NO forKey: @"drawsBackground"];
-    NSURLRequest *nsRequest = [NSURLRequest requestWithURL:indexHTML cachePolicy:NSURLRequestUseProtocolCachePolicy  timeoutInterval: 30.0];
-    
-    [webView loadRequest:nsRequest];
-    
-    [self addSubview:webView];
+        [daysView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [hoursView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [minutesView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [secondsView setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+        [self addConstraint:[stackView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor]];
+        [self addConstraint:[stackView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor]];
+        [self addConstraint:[stackView.topAnchor constraintEqualToAnchor:self.topAnchor]];
+
+        [stackView layoutSubtreeIfNeeded];
+        
+        // set sample test
+        [daysView setValueText:@"7777"];
+        [daysView setLabelText:@"Days"];
+
+        [hoursView setValueText:@"24"];
+        [hoursView setLabelText:@"Hours"];
+
+        [minutesView setValueText:@"00"];
+        [minutesView setLabelText:@"Minutes"];
+
+        [secondsView setValueText:@"00"];
+        [secondsView setLabelText:@"Seconds"];
+
+        [self addSubview:stackView];
+    }
     
     return self;
 }
-
+    
 - (void)animateOneFrame
 {
     [self stopAnimation];
@@ -50,42 +69,12 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
 
 - (BOOL)hasConfigureSheet
 {
-    return YES;
+    return NO;
 }
 
 - (NSWindow*)configureSheet
 {
-    ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:deathCounterModule];
-    
-    if (!configSheet) {
-        if ( ! [[NSBundle bundleForClass:self.class] loadNibNamed:@"ConfigSheet" owner:self  topLevelObjects:nil] ) {
-            NSLog( @"Failed to load configure sheet." );
-        }
-    }
-    
-    [birthday setStringValue:[defaults stringForKey:@"birthday"]];
-    [expectedDeathAge setStringValue:[defaults stringForKey:@"expectedDeathAge"]];
-    
-    return configSheet;
-}
-
-
-- (IBAction)cancelClick:(id)sender {
-    [[NSApplication sharedApplication] endSheet:configSheet];
-}
-
-- (IBAction)saveClick:(id)sender {
-    ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:deathCounterModule];
-
-    [defaults setValue:[birthday stringValue] forKey:@"birthday"];
-    [defaults setValue:[expectedDeathAge stringValue]
-               forKey:@"expectedDeathAge"];
-
-    [defaults synchronize];
-
-    [[NSApplication sharedApplication] endSheet:configSheet];
+    return nil;
 }
 
 @end
