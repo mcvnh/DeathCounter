@@ -151,15 +151,8 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     for (NSString * path in paths) {
         NSURL * url = [NSURL fileURLWithPath:path];
         CFErrorRef error;
-        bool success = CTFontManagerRegisterFontsForURL(CFBridgingRetain(url), kCTFontManagerScopeProcess, &error);
-
+        CTFontManagerRegisterFontsForURL(CFBridgingRetain(url), kCTFontManagerScopeProcess, &error);
         error = nil;
-        
-        if (success) {
-            NSLog(@"Font registed %@ successful.", path);
-        } else {
-            NSLog(@"Font registed %@ failed.", path);
-        }
     }
 }
 
