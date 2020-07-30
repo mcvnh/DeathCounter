@@ -16,5 +16,12 @@
     SectionView *secondsView;
     
     NSStackView *stackView;
+
+    IBOutlet id configSheet;
+    IBOutlet NSTextField *birthday;
+    IBOutlet NSTextField *expectedDeathAge;
+    
+    NSDate *userBirthday;
+    NSDate *userDeathDate;
 }
 @end

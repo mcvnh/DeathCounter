@@ -16,21 +16,16 @@
     value = [LabelView new];
     label = [LabelView new];
     
+    [label setTextColor:[NSColor colorWithWhite:1.0 alpha:0.4]];
+    
     [value setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [self addSubview:value];
-    [self addSubview:label];
-        
-    [value.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
-    [value.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
-    [value.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = YES;
-    [value.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
-    
-    [label.leadingAnchor constraintEqualToAnchor:self.leadingAnchor].active = YES;
-    [label.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
-    [label.trailingAnchor constraintEqualToAnchor:self.trailingAnchor].active = YES;
-    
+    [self addArrangedSubview:value];
+    [self addArrangedSubview:label];
+    [self setOrientation:NSUserInterfaceLayoutOrientationVertical];
+    [self setAlignment:NSLayoutAttributeCenterX];
+
     return self;
 }
 
@@ -43,4 +38,15 @@
 {
     [self->value setStringValue:text];
 }
+
+- (void)setMainFont:(NSFont *)font
+{
+    [self->value setFont:font];
+}
+
+- (void)setSubFont:(NSFont *)font
+{
+    [self->label setFont:font];
+}
+
 @end

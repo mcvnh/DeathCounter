@@ -11,13 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SectionView : NSView {
+@interface SectionView : NSStackView {
     LabelView *value;
     LabelView *label;
 }
 
 - (void)setValueText:(NSString *)text;
 - (void)setLabelText:(NSString *)text;
+- (void)setMainFont:(NSFont *)font;
+- (void)setSubFont:(NSFont *)font;
 
 @end
 

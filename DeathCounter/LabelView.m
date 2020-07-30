@@ -13,14 +13,14 @@
 - (id)initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
-    
+
     [self setBezeled:NO];
     [self setDrawsBackground:NO];
     [self setTextColor:[NSColor whiteColor]];
     [self setEditable:NO];
     [self setSelectable:NO];
     [self setAlignment:NSTextAlignmentCenter];
-    
+
     return self;
 }
 
