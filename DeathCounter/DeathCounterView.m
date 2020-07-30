@@ -13,6 +13,8 @@
 
 static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
 
+// MARK: - Initialize
+
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
 {
     self = [super initWithFrame:frame isPreview:isPreview];
@@ -31,11 +33,16 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     return self;
 }
 
+// MARK: - Loop
+
 - (void)animateOneFrame
 {
     NSDate *currentDay = [NSDate date];
     
-    NSDateComponents *components = [[NSCalendar currentCalendar] components: NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate: currentDay toDate: self->userDeathDate options: 0];
+    NSCalendarUnit extractedUnits = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *components = [[NSCalendar currentCalendar] components: extractedUnits
+                                                                   fromDate: currentDay
+                                                                     toDate: self->userDeathDate options: 0];
     
     NSInteger days = [components day];
     NSInteger hours = [components hour];
@@ -71,7 +78,13 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     
     [birthday setStringValue:[defaults stringForKey:@"birthday"]];
     [expectedDeathAge setStringValue:[defaults stringForKey:@"expectedDeathAge"]];
-    
+
+    if ([[defaults stringForKey:@"hideLabels"]  isEqual: @"ON"]) {
+        [hideLabels setState:NSControlStateValueOn];
+    } else {
+        [hideLabels setState:NSControlStateValueOff];
+    }
+
     return configSheet;
 }
 
@@ -86,8 +99,17 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     [defaults setValue:[birthday stringValue] forKey:@"birthday"];
     [defaults setValue:[expectedDeathAge stringValue]
                forKey:@"expectedDeathAge"];
+    
+    if ([hideLabels state] == NSControlStateValueOn) {
+        [defaults setValue:@"ON" forKey:@"hideLabels"];
+    } else {
+        [defaults setValue:@"OFF" forKey:@"hideLabels"];
+    }
 
     [defaults synchronize];
+
+    [self fetchUserInfo];
+    [self hideLabelsIfPossible];
 
     [[NSApplication sharedApplication] endSheet:configSheet];
 }
@@ -142,6 +164,8 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
        [secondsView setSubFont:subFont];
        
        [stackView setHidden:true];
+
+       [self hideLabelsIfPossible];
    }
 }
 
@@ -161,11 +185,19 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     ScreenSaverDefaults *defaults;
     defaults = [ScreenSaverDefaults defaultsForModuleWithName:deathCounterModule];
     [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-           @"1991/10/27", @"birthday",
-           nil]];
+                                @"1991/10/27",
+                                @"birthday",
+                                nil]];
+
     [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
-            @"50", @"expectedDeathAge",
-       nil]];
+                                @"50",
+                                @"expectedDeathAge",
+                                nil]];
+    
+    [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+                                @"On",
+                                @"hideLabels",
+                                nil]];
 }
 
 - (void)fetchUserInfo
@@ -186,5 +218,19 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     self->userDeathDate = [calendar dateByAddingComponents:dateComponents toDate:self->userBirthday options:0];
+    
+    if ([[defaults stringForKey:@"hideLabels"]  isEqual: @"ON"]) {
+        self->userHideLabels = NSControlStateValueOn;
+    } else {
+        self->userHideLabels = NSControlStateValueOff;
+    }
+}
+
+- (void)hideLabelsIfPossible
+{
+    [daysView setHideLabel:self->userHideLabels];
+    [hoursView setHideLabel:self->userHideLabels];
+    [minutesView setHideLabel:self->userHideLabels];
+    [secondsView setHideLabel:self->userHideLabels];
 }
 @end

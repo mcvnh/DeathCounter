@@ -20,8 +20,10 @@
     IBOutlet id configSheet;
     IBOutlet NSTextField *birthday;
     IBOutlet NSTextField *expectedDeathAge;
+    IBOutlet NSButton *hideLabels;
     
     NSDate *userBirthday;
     NSDate *userDeathDate;
+    NSControlStateValue userHideLabels;
 }
 @end

@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setLabelText:(NSString *)text;
 - (void)setMainFont:(NSFont *)font;
 - (void)setSubFont:(NSFont *)font;
+- (void)setHideLabel:(bool)flag;
 
 @end
 

@@ -49,4 +49,8 @@
     [self->label setFont:font];
 }
 
+- (void)setHideLabel:(bool)flag
+{
+    [self->label setHidden:flag];
+}
 @end
