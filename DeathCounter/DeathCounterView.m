@@ -122,22 +122,22 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
        [stackView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
 
        [daysView setValueText:@"0000"];
-       [daysView setLabelText:@"Days"];
+       [daysView setLabelText:@"DAYS"];
        [daysView setMainFont:mainFont];
        [daysView setSubFont:subFont];
 
        [hoursView setValueText:@"24"];
-       [hoursView setLabelText:@"Hours"];
+       [hoursView setLabelText:@"HOURS"];
        [hoursView setMainFont:mainFont];
        [hoursView setSubFont:subFont];
 
        [minutesView setValueText:@"00"];
-       [minutesView setLabelText:@"Minutes"];
+       [minutesView setLabelText:@"MINUTES"];
        [minutesView setMainFont:mainFont];
        [minutesView setSubFont:subFont];
 
        [secondsView setValueText:@"00"];
-       [secondsView setLabelText:@"Seconds"];
+       [secondsView setLabelText:@"SECONDS"];
        [secondsView setMainFont:mainFont];
        [secondsView setSubFont:subFont];
        
