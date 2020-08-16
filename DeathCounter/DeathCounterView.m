@@ -41,7 +41,7 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     
     NSCalendarUnit extractedUnits = NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSDateComponents *components = [[NSCalendar currentCalendar] components: extractedUnits
-                                                                   fromDate: currentDay
+                                                                   fromDate : currentDay
                                                                      toDate: self->userDeathDate options: 0];
     
     NSInteger days = [components day];
@@ -85,6 +85,8 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
         [hideLabels setState:NSControlStateValueOff];
     }
 
+    [font setStringValue:[defaults stringForKey:@"font"]];
+
     return configSheet;
 }
 
@@ -106,6 +108,14 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
         [defaults setValue:@"OFF" forKey:@"hideLabels"];
     }
 
+    NSString *currentFont = [defaults stringForKey:@"font"];
+    NSString *newFont = [font stringValue];
+
+    if ([currentFont isNotEqualTo:newFont]) {
+        [defaults setValue:[font stringValue] forKey:@"font"];
+        [self updateFont];
+    }
+
     [defaults synchronize];
 
     [self fetchUserInfo];
@@ -118,8 +128,8 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
 
 - (void)buildClock
 {
-    NSFont *mainFont = [NSFont fontWithName:@"Iceland-Regular" size:self.frame.size.width * 0.1];
-    NSFont *subFont = [NSFont fontWithName:@"Iceland-Regular" size:self.frame.size.width * 0.035];
+    ScreenSaverDefaults *defaults;
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:deathCounterModule];
 
    if (self) {
        stackView = [NSStackView new];
@@ -138,35 +148,51 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
 
        [self addSubview:stackView];
        
-       [stackView setSpacing:self.frame.size.width * 0.06];
+       [stackView setSpacing:self.frame.size.width * 0.08];
 
        [stackView.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
        [stackView.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
 
        [daysView setValueText:@"0000"];
        [daysView setLabelText:@"DAYS"];
-       [daysView setMainFont:mainFont];
-       [daysView setSubFont:subFont];
 
        [hoursView setValueText:@"24"];
        [hoursView setLabelText:@"HOURS"];
-       [hoursView setMainFont:mainFont];
-       [hoursView setSubFont:subFont];
 
        [minutesView setValueText:@"00"];
        [minutesView setLabelText:@"MINUTES"];
-       [minutesView setMainFont:mainFont];
-       [minutesView setSubFont:subFont];
 
        [secondsView setValueText:@"00"];
        [secondsView setLabelText:@"SECONDS"];
-       [secondsView setMainFont:mainFont];
-       [secondsView setSubFont:subFont];
-       
+
+       [self updateFont];
        [stackView setHidden:true];
 
        [self hideLabelsIfPossible];
    }
+}
+
+- (void)updateFont
+{
+    ScreenSaverDefaults *defaults;
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:deathCounterModule];
+
+    NSString *fontName = [defaults stringForKey:@"font"];
+
+    NSFont *mainFont = [NSFont fontWithName:fontName size:self.frame.size.width * 0.1];
+    NSFont *subFont = [NSFont fontWithName:fontName size:self.frame.size.width * 0.035];
+
+    [daysView setMainFont:mainFont];
+    [daysView setSubFont:subFont];
+
+    [hoursView setMainFont:mainFont];
+    [hoursView setSubFont:subFont];
+
+    [minutesView setMainFont:mainFont];
+    [minutesView setSubFont:subFont];
+
+    [secondsView setMainFont:mainFont];
+    [secondsView setSubFont:subFont];
 }
 
 - (void)registerCustomFonts
@@ -197,6 +223,11 @@ static NSString * const deathCounterModule = @"com.anhmv.deathcounter";
     [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
                                 @"On",
                                 @"hideLabels",
+                                nil]];
+
+    [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
+                                @"Iceland",
+                                @"font",
                                 nil]];
 }
 

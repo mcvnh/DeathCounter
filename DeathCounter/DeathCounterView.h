@@ -21,6 +21,7 @@
     IBOutlet NSTextField *birthday;
     IBOutlet NSTextField *expectedDeathAge;
     IBOutlet NSButton *hideLabels;
+    IBOutlet NSComboBox *font;
     
     NSDate *userBirthday;
     NSDate *userDeathDate;
