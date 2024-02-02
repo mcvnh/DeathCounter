@@ -11,4 +11,4 @@
 - Install the screensaver by double-clicking on the file with the extension `.saver`.
 
 
-**This screen saver was built with personal purpose only, the screen saver archive file itself might not impossible to install in other machine, therefore it's better to clone the source code and build your own, please open an issue incase you have any troubles with the installation.**
+**This screensaver was built for personal use only. The screensaver archive file itself might be difficult to install on another machine. Therefore, it's better to clone the source code and build your own. Please open an issue in case you encounter any troubles during the installation.**
