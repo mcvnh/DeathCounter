@@ -1,6 +1,6 @@
 # Death Counter
 
- A simple counter screensaver that counts down to your death. 
+A delightfully morbid little screensaver for macOS — it’s just a simple counter ticking down to your inevitable demise. Sweet, right?
 
 ![screenshot](deathcounter.png)
 
